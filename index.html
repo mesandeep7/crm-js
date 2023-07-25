@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Relationship Manager</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="headingSec">
+        <h1>CRM - Customer Relationship Manager</h1>
+    </div>
+    <div >
+        <button id="addCustomerBtn" onclick="showAddCustomerForm()">Add Customer</button>
+    </div>
+
+    <!-- <div class="container"> -->
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <!-- Table rows will be populated dynamically using JavaScript code -->
+            </tbody>
+        </table>
+    <!-- </div> -->
+
+    <div class="overlay" id="overlay">
+        <div class="modal">
+            <span class="close" onclick="hideAddCustomerForm()">&times;</span>
+            <h2 id="formHeading">Add Customer</h2>
+            <form id="addCustomerForm" data-mode="add">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required><br>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <input id type="submit" value="Save">
+            </form>
+        </div>
+    </div>
+
+    <!-- Add a hidden form for editing customer data -->
+    <div id="editCustomerFormOverlay" style="display: none;">
+        <div class="modal">
+            <!-- <span class="close" onclick="hideAddCustomerForm()">&times;</span> -->
+            <form id="editCustomerForm">
+                <label for="editFirstName">First Name:</label>
+                <input type="text" id="editFirstName" required><br>
+                <label for="editLastName">Last Name:</label>
+                <input type="text" id="editLastName" required><br>
+                <label for="editEmail">Email:</label>
+                <input type="email" id="editEmail" required><br>
+                <button id="addCustomerBtn" type="submit">Update</button>
+                <button  id="addCustomerBtn" type="button" onclick="hideEditCustomerForm()">Cancel</button>
+            </form>
+        </div>
+
+        
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
